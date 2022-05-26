@@ -115,6 +115,8 @@ app.post("/delete",function(req,res){
 
 });
 
-app.listen(3000,function() {
-  console.log("server is up and listening")
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port);
